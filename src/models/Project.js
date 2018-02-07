@@ -1,5 +1,5 @@
 class Project {
-    constructor(name: string, repo_url: string) {
+    constructor(name, repo_url) {
         this.name = name;
         this.repo_url = repo_url;
     }
