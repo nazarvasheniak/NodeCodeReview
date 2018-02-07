@@ -1,0 +1,47 @@
+{
+    "name": "node-architecture-boilerplate",
+    "version": "0.1.0",
+    "description": "A node boilerplate project showcasing an architecture approach",
+    "main": "server.js",
+    "scripts": {
+        "debug": "nodemon --watch src --exec babel-node src/server.js",
+        "start": "node ./dist/server.js",
+        "build": "babel src/ -d dist/",
+        "test": "mocha test --recursive --compilers js:babel-register",
+        "lint": "eslint src/**",
+        "flow": "flow"
+    },
+    "pre-commit": [
+        "lint",
+        "flow"
+    ],
+    "author": "Alex Koufatzis",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.18.0",
+        "dotenv": "^4.0.0",
+        "express": "4.15.4",
+        "pg": "^7.3.0",
+        "pg-hstore": "^2.3.2",
+        "sequelize": "^4.8.4"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-eslint": "^7.2.3",
+        "babel-preset-flow": "^6.23.0",
+        "babel-register": "^6.26.0",
+        "chai": "^4.1.2",
+        "eslint": "^4.6.0",
+        "eslint-config-airbnb": "^15.1.0",
+        "eslint-plugin-flowtype": "^2.35.1",
+        "eslint-plugin-import": "^2.7.0",
+        "eslint-plugin-jsx-a11y": "^5.1.1",
+        "eslint-plugin-react": "^7.3.0",
+        "flow-bin": "^0.54.0",
+        "mocha": "^3.5.0",
+        "nodemon": "^1.12.0",
+        "pre-commit": "^1.2.2",
+        "sinon": "^3.2.1",
+        "supertest": "^3.0.0"
+    }
+}
