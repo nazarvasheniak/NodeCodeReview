@@ -1,6 +1,6 @@
 class Project {
-    name;
-    repo_url;
+    name,
+    repo_url,
 
     constructor(name, repo_url) {
         this.name = name;
