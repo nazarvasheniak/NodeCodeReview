@@ -13,8 +13,6 @@ module.exports = (sequelize) => {
         }
     });
 
-    // Map to application model so we don't have tight coupling 
-    // throughout the app with the db implemenation
     User.prototype.toUserModel = function toUserModel() {
         return new UserModel(this.username_github, this.username_telegram);
     };
