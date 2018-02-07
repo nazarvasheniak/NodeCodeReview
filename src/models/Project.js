@@ -1,8 +1,8 @@
 class Project {
-    name: string;
-    repo_url: string;
+    name: any;
+    repo_url: any;
 
-    constructor(name: string, repo_url: string) {
+    constructor(name: any, repo_url: any) {
         this.name = name;
         this.repo_url = repo_url;
     }
