@@ -1,4 +1,5 @@
 require('dotenv').config();
+debugger;
 const logger = require('./libs/logger');
 const { port } = require('./configuration');
 const db = require('./database');
