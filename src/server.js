@@ -18,9 +18,9 @@ const handler = createHandler([ // multiple handlers
 ]);
 
 debugger;
-/* const server = app.listen(port, (req, res) => {
+const server = app.listen(port, (req, res) => {
     debugger;
-    
+
     handler(req, res, function(err) {
         debugger;
         res.statusCode = 404;
@@ -28,7 +28,7 @@ debugger;
         debugger;
     });
     debugger;
-}); */
+});
 
 handler.on('error', function(err) {
     debugger;
