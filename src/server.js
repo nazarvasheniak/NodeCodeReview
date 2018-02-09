@@ -1,5 +1,4 @@
 require('dotenv').config();
-debugger;
 const logger = require('./libs/logger');
 const { port } = require('./configuration');
 const db = require('./database');
@@ -17,28 +16,18 @@ const handler = createHandler([ // multiple handlers
     { path: '/webhook', secret: '60f15027f1bb1e163691410845e34957814ef3ca' }
 ]);
 
-debugger;
-const server = app.listen(port, (req, res) => {
-    debugger;
-
-    handler(req, res, function(err) {
-        debugger;
-        res.statusCode = 404;
-        res.end('no such location');
-        debugger;
-    });
-    debugger;
+const server = app.listen(port, function(req, res) {
+    logger.info(`Listening on *:${port}`);
 });
 
-handler.on('error', function(err) {
-    debugger;
-    console.error('Error:', err.message)
+server.on('event', function(data) {
+    console.log(data);
 });
 
-/* const shutdown = signals.init(async() => {
+const shutdown = signals.init(async() => {
     await db.close();
     await server.close();
-}); */
-/* 
+});
+
 process.on('SIGINT', shutdown);
-process.on('SIGTERM', shutdown); */
+process.on('SIGTERM', shutdown);
