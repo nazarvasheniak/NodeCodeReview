@@ -1,12 +1,7 @@
 const express = require('express');
 const asyncWrapper = require('../utils/asyncWrapper');
-const createHandler = require('node-github-webhook');
 
 const router = express.Router();
-
-const handler = createHandler([
-    { path: '/webhook', secret: '60f15027f1bb1e163691410845e34957814ef3ca' }
-]);
 
 function create() {
     router.get('/', asyncWrapper(async(req, res) => {
