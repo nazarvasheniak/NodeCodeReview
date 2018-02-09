@@ -16,15 +16,21 @@ const handler = createHandler([ // multiple handlers
     { path: '/webhook', secret: '60f15027f1bb1e163691410845e34957814ef3ca' }
 ]);
 
+debugger;
 const server = app.listen(port, (req, res) => {
+    debugger;
     /* logger.info(`Listening on *:${port}`); */
     handler(req, res, function(err) {
-        res.statusCode = 404
-        res.end('no such location')
+        debugger;
+        res.statusCode = 404;
+        res.end('no such location');
+        debugger;
     });
+    debugger;
 });
 
 handler.on('error', function(err) {
+    debugger;
     console.error('Error:', err.message)
 });
 
