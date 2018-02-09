@@ -17,9 +17,9 @@ const handler = createHandler([ // multiple handlers
 ]);
 
 debugger;
-const server = app.listen(port, (req, res) => {
+/* const server = app.listen(port, (req, res) => {
     debugger;
-    /* logger.info(`Listening on *:${port}`); */
+    
     handler(req, res, function(err) {
         debugger;
         res.statusCode = 404;
@@ -27,17 +27,17 @@ const server = app.listen(port, (req, res) => {
         debugger;
     });
     debugger;
-});
+}); */
 
 handler.on('error', function(err) {
     debugger;
     console.error('Error:', err.message)
 });
 
-const shutdown = signals.init(async() => {
+/* const shutdown = signals.init(async() => {
     await db.close();
     await server.close();
-});
-
+}); */
+/* 
 process.on('SIGINT', shutdown);
-process.on('SIGTERM', shutdown);
+process.on('SIGTERM', shutdown); */
