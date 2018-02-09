@@ -16,17 +16,16 @@ const handler = createHandler([ // multiple handlers
     { path: '/webhook', secret: '60f15027f1bb1e163691410845e34957814ef3ca' }
 ]);
 
-handler.on('error', function(err) {
-    console.error('Error:', err.message)
-});
-
-const server = app.listen(port, () => {
-    /* handler(req, res, function(err) {
+const server = app.listen(port, (req, res) => {
+    /* logger.info(`Listening on *:${port}`); */
+    handler(req, res, function(err) {
         res.statusCode = 404
         res.end('no such location')
-    }); */
+    });
+});
 
-    logger.info(`Listening on *:${port}`);
+handler.on('error', function(err) {
+    console.error('Error:', err.message)
 });
 
 const shutdown = signals.init(async() => {
