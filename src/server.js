@@ -17,6 +17,11 @@ const handler = createHandler([ // multiple handlers
 ]);
 
 const server = app.listen(port, () => {
+    handler(req, res, function(err) {
+        res.statusCode = 404
+        res.end('no such location')
+    });
+
     logger.info(`Listening on *:${port}`);
 });
 
