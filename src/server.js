@@ -1,11 +1,11 @@
 require('dotenv').config();
-const logger = require('../libs/logger');
-const { port } = require('../configuration');
-const db = require('../database');
-const repositories = require('../repositories')(db);
-const services = require('../services')(repositories);
-const app = require('../http/app')(services);
-const signals = require('../signals');
+const logger = require('./libs/logger');
+const { port } = require('./configuration');
+const db = require('./database');
+const repositories = require('./repositories')(db);
+const services = require('./services')(repositories);
+const app = require('./http/app')(services);
+const signals = require('./signals');
 const moment = require('moment');
 const TelegramBot = require('node-telegram-bot-api');
 const token = '536984728:AAEgy-XZQUoDGaTJWJ_WyeIm6ODykTeWkUo';
