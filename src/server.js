@@ -16,6 +16,10 @@ const handler = createHandler([ // multiple handlers
     { path: '/webhook', secret: '60f15027f1bb1e163691410845e34957814ef3ca' }
 ]);
 
+handler.on('error', function(err) {
+    console.error('Error:', err.message)
+});
+
 const server = app.listen(port, () => {
     /* handler(req, res, function(err) {
         res.statusCode = 404
@@ -28,10 +32,6 @@ const server = app.listen(port, () => {
 const shutdown = signals.init(async() => {
     await db.close();
     await server.close();
-});
-
-handler.on('error', function(err) {
-    console.error('Error:', err.message)
 });
 
 process.on('SIGINT', shutdown);
