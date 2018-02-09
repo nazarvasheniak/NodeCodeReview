@@ -17,10 +17,10 @@ const handler = createHandler([ // multiple handlers
 ]);
 
 const server = app.listen(port, () => {
-    handler(req, res, function(err) {
+    /* handler(req, res, function(err) {
         res.statusCode = 404
         res.end('no such location')
-    });
+    }); */
 
     logger.info(`Listening on *:${port}`);
 });
@@ -28,6 +28,10 @@ const server = app.listen(port, () => {
 const shutdown = signals.init(async() => {
     await db.close();
     await server.close();
+});
+
+handler.on('error', function(err) {
+    console.error('Error:', err.message)
 });
 
 process.on('SIGINT', shutdown);
