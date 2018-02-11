@@ -10,10 +10,7 @@ function create() {
 
     router.post('/', asyncWrapper(async(req, res) => {
         const data = req.body;
-
-        // TODO: Fix the response
-        res.json({});
-        console.log(req);
+        console.log(data);
     }));
 
     return router;
