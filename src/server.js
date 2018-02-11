@@ -16,21 +16,13 @@ const handler = createHandler([ // multiple handlers
     { path: '/webhook', secret: '60f15027f1bb1e163691410845e34957814ef3ca' }
 ]);
 
-debugger;
-
 const server = app.listen(port, function(req, res) {
     logger.info(`Listening on *:${port}`);
-    debugger;
 });
-
-debugger;
 
 server.on('event', function(data) {
     console.log(data);
-    debugger;
 });
-
-debugger;
 
 const shutdown = signals.init(async() => {
     await db.close();
