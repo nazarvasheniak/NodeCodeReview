@@ -9,10 +9,9 @@ function create() {
         res.json(projects);
     })); */
 
-    // TODO: Install middleware to validate the input
     router.post('/', asyncWrapper(async(req, res) => {
-        /* const project = req.body;
-        await projectService.createUser(project); */
+        const data = req.body;
+
         // TODO: Fix the response
         res.json({});
     }));

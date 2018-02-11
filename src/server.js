@@ -20,10 +20,6 @@ const server = app.listen(port, function(req, res) {
     logger.info(`Listening on *:${port}`);
 });
 
-server.on('event', function(data) {
-    console.log(data);
-});
-
 const shutdown = signals.init(async() => {
     await db.close();
     await server.close();
