@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 
 module.exports = (services) => {
-    const webhook = webhookRoute.create();
+    const webhook = webhookRoute.create(services);
     const user = userRoute.create(services);
     const project = projectRoute.create(services);
 
