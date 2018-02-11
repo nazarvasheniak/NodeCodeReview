@@ -4,10 +4,9 @@ const asyncWrapper = require('../utils/asyncWrapper');
 const router = express.Router();
 
 function create() {
-    /* router.get('/', asyncWrapper(async(req, res) => {
-        const projects = await projectService.getAllProjects();
-        res.json(projects);
-    })); */
+    router.get('/', asyncWrapper(async(req, res) => {
+        res.json('get');
+    }));
 
     router.post('/', asyncWrapper(async(req, res) => {
         const data = req.body;
