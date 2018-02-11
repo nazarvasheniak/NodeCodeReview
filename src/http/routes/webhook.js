@@ -13,6 +13,7 @@ function create() {
 
         // TODO: Fix the response
         res.json({});
+        console.log(req);
     }));
 
     return router;
