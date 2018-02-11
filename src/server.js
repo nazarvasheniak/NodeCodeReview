@@ -8,13 +8,9 @@ const app = require('./http/app')(services);
 const signals = require('./signals');
 const moment = require('moment');
 const TelegramBot = require('node-telegram-bot-api');
-const createHandler = require('node-github-webhook');
 const token = '536984728:AAEgy-XZQUoDGaTJWJ_WyeIm6ODykTeWkUo';
 
 const bot = new TelegramBot(token, { polling: true });
-const handler = createHandler([ // multiple handlers 
-    { path: '/webhook', secret: '60f15027f1bb1e163691410845e34957814ef3ca' }
-]);
 
 const server = app.listen(port, function(req, res) {
     logger.info(`Listening on *:${port}`);
