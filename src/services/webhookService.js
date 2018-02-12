@@ -1,10 +1,10 @@
 function create() {
-    async function sendMessage(data) {
+    async function send(data) {
         console.log(data);
     }
 
     return {
-        sendMessage,
+        send,
     };
 }
 

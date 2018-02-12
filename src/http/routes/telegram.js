@@ -3,15 +3,17 @@ const asyncWrapper = require('../utils/asyncWrapper');
 
 const router = express.Router();
 
-function create({ webhookService }) {
+function create({ telegramService }) {
     router.get('/', asyncWrapper(async(req, res) => {
-        res.json('get');
+        const token = await telegramService.getToken();
+        res.send(token);
     }));
 
+    // TODO: Install middleware to validate the input
     router.post('/', asyncWrapper(async(req, res) => {
-        const data = req.body;
-        await webhookService.send(data);
-
+        const user = req.body;
+        await userService.createUser(user);
+        // TODO: Fix the response
         res.json({});
     }));
 
