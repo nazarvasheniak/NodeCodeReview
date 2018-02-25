@@ -1,7 +1,9 @@
 function create({ User }) {
     async function getAll() {
         const users = await User.findAll();
-        return users.map(user => user.toUserModel());
+        return users.map(function(user){
+            user.toUserModel()
+        });
     }
 
     async function add(user) {
