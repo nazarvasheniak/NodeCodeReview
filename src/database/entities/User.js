@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const UserModel = require('../../models/User');
 
-module.exports = (sequelize) => {
+module.exports = function(sequelize){
     const User = sequelize.define('user', {
         username_github: {
             type: Sequelize.STRING,
